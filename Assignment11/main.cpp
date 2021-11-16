@@ -85,7 +85,7 @@ void programTwo(void)
         switch (option)
         {
         case '0': return;
-        case 'a': case 'A': /*function here*/ break;
+        case 'a': case 'A': mergedMaxHeap(); pause("\n\t\tPress enter to continue..."); break;
         case 'b': case 'B': /*function here*/ break;
         case 'c': case 'C': /*function here*/ break;
         case 'd': case 'D': /*function here*/ break;
