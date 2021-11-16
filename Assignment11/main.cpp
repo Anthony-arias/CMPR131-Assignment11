@@ -5,6 +5,7 @@
 // 11/18/2021
 
 #include <iostream>
+#include <ctime>
 #include <string>
 #include "optionOne.h"
 #include "optionTwo.h"
@@ -96,31 +97,8 @@ void programTwo(void)
 }
 
 //PreCondition: NA
-//PostCondition: 
+//PostCondition: display the contents in option 3
 void programThree(void)
 {
-    do
-    {
-        clearScreen();
-        displayOptionThreeMenu();
-
-        int option = inputChar("\t\tOption: ");
-
-        switch (option)
-        {
-        case '0': return;
-        case 'a': case 'A': /*function here*/ break;
-        case 'b': case 'B': /*function here*/ break;
-        case 'c': case 'C': /*function here*/ break;
-        case 'd': case 'D': /*function here*/ break;
-        case 'e': case 'E': /*function here*/ break;
-        case 'f': case 'F': /*function here*/ break;
-        case 'g': case 'G': /*function here*/ break;
-        case 'h': case 'H': /*function here*/ break;
-        case 'i': case 'I': /*function here*/ break;
-        case 'j': case 'J': /*function here*/  break;
-        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A','B','C','D','E','F','G','H','I' or 'J'" << endl;
-            pause("\n\t\tPress enter to continue...");
-        }
-    } while (true);
+    optionThree();
 }
