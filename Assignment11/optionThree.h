@@ -9,6 +9,8 @@
 
 using namespace std;
 
+// Precondition: NA
+// Postcondition: runs the program based on user's input
 void optionThree()
 {
     srand(time(0));
