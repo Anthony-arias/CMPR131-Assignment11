@@ -35,5 +35,11 @@
     <ClInclude Include="menus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="minHeap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="maxHeap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

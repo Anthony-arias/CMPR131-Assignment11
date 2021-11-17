@@ -11,6 +11,9 @@
 #include "optionThree.h"
 #include "input.h"
 #include "menus.h"
+#include "minHeap.h"
+#include "maxHeap.h"
+
 
 
 void mainMenu(void);
@@ -53,6 +56,20 @@ void mainMenu(void)
 //PostCondition: 
 void programOne(void)
 {
+    MaxHeap<int> heapContainer;
+
+    heapContainer.push(4);
+    heapContainer.push(9);
+    heapContainer.push(1);
+    heapContainer.push(6);
+    heapContainer.push(7);
+    heapContainer.display();
+    cout << endl;
+    heapContainer.pop();
+    heapContainer.display();
+
+    pause("");
+
     cout << "\n\tVectors are sequence containers representing arrays that can change in size.\n";
     do
     {
@@ -63,13 +80,39 @@ void programOne(void)
         switch (option)
         {
         case '0': return;
-        case 'a': case 'A': /*function here*/ break;
+        case 'a': case 'A': /*programOneSubA();*/ break;
         case 'b': case 'B': /*function here*/ break;
         default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'" << endl;
             pause("\n\t\tPress enter to continue...");
         }
     } while (true);
 }
+
+
+////PreCondition: NA
+////PostCondition: 
+//void programOneSubA(void)
+//{
+//
+//    MinHeap<int> heapContainer;
+//
+//    cout << "\n\tVectors are sequence containers representing arrays that can change in size.\n";
+//    do
+//    {
+//        clearScreen();
+//        displayOptionOneMenu();
+//        int option = inputChar("\t\tOption: ");
+//
+//        switch (option)
+//        {
+//        case '0': return;
+//        case 'a': case 'A': /*function here*/ break;
+//        case 'b': case 'B': /*function here*/ break;
+//        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'" << endl;
+//            pause("\n\t\tPress enter to continue...");
+//        }
+//    } while (true);
+//}
 
 
 //PreCondition: NA
