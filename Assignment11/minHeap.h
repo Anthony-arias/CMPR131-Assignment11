@@ -10,9 +10,10 @@ template<class T>
 class MinHeap
 {
 private:
-	vector<T> heapContainer;
 	int size;
 public:
+	vector<T> heapContainer;
+
 	MinHeap()
 	{
 		size = 0;

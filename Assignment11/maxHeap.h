@@ -10,9 +10,10 @@ template<class T>
 class MaxHeap
 {
 private:
-	vector<T> heapContainer;
 	int size;
 public:
+	vector<T> heapContainer;
+
 	MaxHeap()
 	{
 		size = 0;
