@@ -72,7 +72,7 @@ void programOne(void)
         case 'a': case 'A': programOneSubA(); break;
         case 'b': case 'B': programOneSubB(); break;
         default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'" << endl;
-            pause("\n\t\tPress enter to continue...");
+            pause("\n\t\tPress enter to continue...");            
         }
     } while (true);
 }

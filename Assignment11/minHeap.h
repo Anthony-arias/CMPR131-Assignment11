@@ -84,7 +84,7 @@ public:
 	//PostCondition: removes front key from heap container
 	void pop(void)
 	{
-		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty");
+		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty.");
 
 		heapContainer[0] = heapContainer[size - 1];
 		heapContainer.pop_back();
@@ -114,7 +114,7 @@ public:
 	//PostCondition: displays contents of heap container 
 	void display(void)
 	{
-		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty");
+		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty.");
 		for (int i = 0; i < size; i++)
 		{
 			cout << heapContainer[i] << " ";
@@ -152,7 +152,7 @@ public:
 	//PostCondition: returns front data in heap container
 	T getFront(void)
 	{
-		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty");
+		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty.");
 		return heapContainer[0];
 	}
 };
