@@ -63,7 +63,9 @@ void programOne(void)
     do
     {
         clearScreen();
+
         displayOptionOneMenu();
+
         int option = inputChar("\t\tOption: ");
 
         switch (option)
@@ -71,8 +73,9 @@ void programOne(void)
         case '0': return;
         case 'a': case 'A': programOneSubA(); break;
         case 'b': case 'B': programOneSubB(); break;
-        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'" << endl;
-            pause("\n\t\tPress enter to continue...");            
+        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'." << endl;
+            pause("\n\t\tPress enter to continue...");   
+            //system("pause");
         }
     } while (true);
 }
@@ -130,7 +133,7 @@ void programOneSubA(void)
             catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; }
             pause("");
             break;
-        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'" << endl;
+        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'." << endl;
             pause("");
         }
     } while (true);
@@ -189,7 +192,7 @@ void programOneSubB(void)
             catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; }
             pause("");
             break;
-        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'" << endl;
+        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'." << endl;
             pause("");
         }
     } while (true);
@@ -218,8 +221,9 @@ void programTwo(void)
         case 'b': case 'B': IntersectTwoMaxHeaps(maxHeap1, maxHeap2); pause(""); break;
         case 'c': case 'C': mergedTwoMinHeap(minHeap1, minHeap2); pause("");  break;
         case 'd': case 'D': IntersectTwoMinHeaps(minHeap1, minHeap2); pause(""); break;
-        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A','B','C', or 'D'" << endl;
+        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A','B','C', or 'D'." << endl;
             pause("\n\t\tPress enter to continue...");
+            //system("pause");
         }
     } while (true);
 }
@@ -404,7 +408,7 @@ void programThree(void)
             }
             break;
         default:
-            cout << "\t\tERROR-1A: Invalid input. Must be '0','A','B','C','D','E','F','G','H','I' or 'J'" << endl;
+            cout << "\t\tERROR-1A: Invalid input. Must be '0','A','B','C','D','E','F','G','H','I' or 'J'." << endl;
         }
         cout << "\n";
         system("pause");
