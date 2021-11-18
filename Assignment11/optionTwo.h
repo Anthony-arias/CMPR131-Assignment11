@@ -8,18 +8,6 @@
 #include "minHeap.h"
 #include "maxHeap.h"
 
-//PreCondition: input vector data and the value need to find
-//PostCondition: return true if the value is found, otherwise return false
-bool search(vector<int>data, int value)
-{
-	for (int i = 0; i < data.size(); i++)
-	{
-		if (value == data[i])
-			return true;
-	}
-	return false;
-}
-
 //PreCondition: input two maxHeap
 //PostCondition: merged two maxHeap
 void mergedTwoMaxHeap(MaxHeap<int>heap1, MaxHeap<int>heap2)
@@ -30,10 +18,8 @@ void mergedTwoMaxHeap(MaxHeap<int>heap1, MaxHeap<int>heap2)
 	heap2.display();
 	MaxHeap<int> temp;
 	for (int i = 0; i < heap2.getSize(); i++)
-		if (!search(heap1.heapContainer, heap2.heapContainer[i]))
-			temp.push(heap2.heapContainer[i]);
-	for (int i = 0; i < temp.getSize(); i++)
-		heap1.push(temp.heapContainer[i]);
+		if (!heap1.containes(heap2.heapContainer[i]))
+			heap1.push(heap2.heapContainer[i]);
 	cout << "\n\t\tMerged max heap: ";
 	heap1.display();
 }
@@ -49,7 +35,7 @@ void IntersectTwoMaxHeaps(MaxHeap<int>heap1, MaxHeap<int>heap2)
 	heap2.display();
 	MaxHeap<int> intersectHeap;
 	for (int i = 0; i < heap2.getSize(); i++)
-		if (search(heap1.heapContainer, heap2.heapContainer[i]))
+		if (heap1.containes(heap2.heapContainer[i]))
 			intersectHeap.push(heap2.heapContainer[i]);
 	cout << "\n\t\tIntersect heap: ";
 	intersectHeap.display();
@@ -65,10 +51,8 @@ void mergedTwoMinHeap(MinHeap<int>heap1, MinHeap<int>heap2)
 	heap2.display();
 	MinHeap<int> temp;
 	for (int i = 0; i < heap2.getSize(); i++)
-		if (!search(heap1.heapContainer, heap2.heapContainer[i]))
-			temp.push(heap2.heapContainer[i]);
-	for (int i = 0; i < temp.getSize(); i++)
-		heap1.push(temp.heapContainer[i]);
+		if (!heap1.containes(heap2.heapContainer[i]))
+			heap1.push(heap2.heapContainer[i]);
 	cout << "\n\t\tMerged min heap: ";
 	heap1.display();
 }
@@ -84,7 +68,7 @@ void IntersectTwoMinHeaps(MinHeap<int>heap1, MinHeap<int>heap2)
 	heap2.display();
 	MinHeap<int> intersectHeap;
 	for (int i = 0; i < heap2.getSize(); i++)
-		if (search(heap1.heapContainer, heap2.heapContainer[i]))
+		if (heap1.containes(heap2.heapContainer[i]))
 			intersectHeap.push(heap2.heapContainer[i]);
 	cout << "\n\t\tIntersect heap: ";
 	intersectHeap.display();

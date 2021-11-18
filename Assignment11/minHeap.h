@@ -29,8 +29,9 @@ public:
 	MinHeap(vector<T>data)
 	{
 		for (int i = 0; i < data.size(); i++)
-			push(data[i]);
-		size = data.size();
+			if (!containes(data[i]))
+				push(data[i]);
+		size = heapContainer.size();
 	}
 
 	~MinHeap()

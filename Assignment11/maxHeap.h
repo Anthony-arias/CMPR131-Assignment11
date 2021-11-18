@@ -12,28 +12,6 @@ class MaxHeap
 {
 private:
 	int size;
-	void maxHeapify(vector<T>data, int i)
-	{
-		if (i >= data.size())
-			return;
-		int left = 2 * i + 1;
-		int right = 2 * i + 2;
-		int largest;
-
-		if (left < data.size() && data[left] > data[i])
-			largest = left;
-		else
-			largest = i;
-
-		if (right < data.size() && data[right] > data[largest])
-			largest = right;
-
-		if (largest != i) 
-		{
-			swap(data[largest], data[i]);
-			maxHeapify(data, largest);
-		}
-	}
 public:
 	vector<T> heapContainer;
 
@@ -51,8 +29,9 @@ public:
 	MaxHeap(vector<T>data)
 	{
 		for (int i = 0; i < data.size(); i++)
-			push(data[i]);
-		size = data.size();
+			if (!containes(data[i]))
+				push(data[i]);
+		size = heapContainer.size();
 	}
 
 	~MaxHeap()
