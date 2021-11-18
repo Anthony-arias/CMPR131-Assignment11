@@ -20,6 +20,8 @@ void mainMenu(void);
 void programOne(void);
 void programTwo(void);
 void programThree(void);
+void programOneSubA(void);
+void programOneSubB(void);
 
 using namespace std;
 
@@ -53,23 +55,9 @@ void mainMenu(void)
 }
 
 //PreCondition: NA
-//PostCondition: 
+//PostCondition: runs program one
 void programOne(void)
 {
-    MaxHeap<int> heapContainer;
-
-    heapContainer.push(4);
-    heapContainer.push(9);
-    heapContainer.push(1);
-    heapContainer.push(6);
-    heapContainer.push(7);
-    heapContainer.display();
-    cout << endl;
-    heapContainer.pop();
-    heapContainer.display();
-
-    pause("");
-
     cout << "\n\tVectors are sequence containers representing arrays that can change in size.\n";
     do
     {
@@ -80,40 +68,129 @@ void programOne(void)
         switch (option)
         {
         case '0': return;
-        case 'a': case 'A': /*programOneSubA();*/ break;
-        case 'b': case 'B': /*function here*/ break;
+        case 'a': case 'A': programOneSubA(); break;
+        case 'b': case 'B': programOneSubB(); break;
         default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'" << endl;
             pause("\n\t\tPress enter to continue...");
         }
     } while (true);
 }
 
+//PreCondition: NA
+//PostCondition: runs min heap program
+void programOneSubA(void)
+{
+    MinHeap<int> minHeap;
+    do
+    {
+        clearScreen();
+        displayOptionOneSubAmenu();
+        int option = inputChar("\t\tOption: ");
 
-////PreCondition: NA
-////PostCondition: 
-//void programOneSubA(void)
-//{
-//
-//    MinHeap<int> heapContainer;
-//
-//    cout << "\n\tVectors are sequence containers representing arrays that can change in size.\n";
-//    do
-//    {
-//        clearScreen();
-//        displayOptionOneMenu();
-//        int option = inputChar("\t\tOption: ");
-//
-//        switch (option)
-//        {
-//        case '0': return;
-//        case 'a': case 'A': /*function here*/ break;
-//        case 'b': case 'B': /*function here*/ break;
-//        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'" << endl;
-//            pause("\n\t\tPress enter to continue...");
-//        }
-//    } while (true);
-//}
+        switch (option)
+        {
+        case '0': return;
+        case 'a': case 'A': cout << "\n\t\tSize of the heap: " << minHeap.getSize() << endl; pause(""); break;
+        case 'b': case 'B': 
+            if (minHeap.isEmpty()) cout << "\n\t\tThe heap is empty." << endl;
+            else cout << "\n\t\tThe heap is not empty." << endl;
+            pause("");
+            break;
+        case 'c': case 'C':
+            try
+            {
+                minHeap.push(inputInteger("\n\t\tEnter an integer element to push onto the heap: "));
+            }
+            catch(const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; pause("");}
+            break;
+        case 'd': case 'D':
+            try
+            {
+                cout << "\n\t\tThe first element of the heap: " << minHeap.getFront() << endl;
+            }
+            catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; }
+            pause("");
+            break;
+        case 'e': case 'E':
+            try
+            {
+                minHeap.pop();
+                cout << "\n\t\tThe first element of the heap has been removed." << endl;
+            }
+            catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; }
+            pause("");
+            break;
+        case 'f': case 'F':
+            try
+            {
+                minHeap.display();
+            }
+            catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; }
+            pause("");
+            break;
+        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'" << endl;
+            pause("");
+        }
+    } while (true);
+}
 
+//PreCondition: NA
+//PostCondition: runs max heap program 
+void programOneSubB(void)
+{
+    MaxHeap<int> maxHeap;
+    do
+    {
+        clearScreen();
+        displayOptionOneSubBmenu();
+        int option = inputChar("\t\tOption: ");
+
+        switch (option)
+        {
+        case '0': return;
+        case 'a': case 'A': cout << "\n\t\tSize of the heap: " << maxHeap.getSize() << endl; pause(""); break;
+        case 'b': case 'B':
+            if (maxHeap.isEmpty()) cout << "\n\t\tThe heap is empty." << endl;
+            else cout << "\n\t\tThe heap is not empty." << endl;
+            pause("");
+            break;
+        case 'c': case 'C':
+            try
+            {
+                maxHeap.push(inputInteger("\n\t\tEnter an integer element to push onto the heap: "));
+            }
+            catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; pause(""); }
+            break;
+        case 'd': case 'D':
+            try
+            {
+                cout << "\n\t\tThe first element of the heap: " << maxHeap.getFront() << endl;
+            }
+            catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; }
+            pause("");
+            break;
+        case 'e': case 'E':
+            try
+            {
+                maxHeap.pop();
+                cout << "\n\t\tThe first element of the heap has been removed." << endl;
+            }
+            catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; }
+            pause("");
+            break;
+        case 'f': case 'F':
+            try
+            {
+                maxHeap.display();
+            }
+            catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; }
+            pause("");
+            break;
+        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'" << endl;
+            pause("");
+        }
+    } while (true);
+}
 
 //PreCondition: NA
 //PostCondition: 

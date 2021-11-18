@@ -30,24 +30,32 @@ public:
 		heapContainer.clear();
 	}
 
+	//PreCondition: input is type int
+	//PostCondition: returns index of parent key
 	int parentIndex(int thisIndex)
 	{
 		return (thisIndex - 1) / 2;
 	}
 
+	//PreCondition: input is type int
+	//PostCondition: returns index of left child key
 	int leftChildIndex(int thisIndex)
 	{
 		return 2 * thisIndex + 1;
 	}
 
+	//PreCondition: input is type int
+	//PostCondition: returns index of right child key
 	int rightChildIndex(int thisIndex)
 	{
 		return 2 * thisIndex + 2;
 	}
 
+	//PreCondition: input is type T 
+	//PostCondition: pushes data into heap container
 	void push(const T& _data)
 	{
-		if (containes(_data)) throw invalid_argument("ERROR: the element," + to_string(_data) + ", already existed in the heap. Please re-specify.");
+		if (containes(_data)) throw invalid_argument("ERROR: the element, " + to_string(_data) + ", already existed in the heap. Please re-specify.");
 
 		heapContainer.push_back(_data);
 		size++;
@@ -63,6 +71,8 @@ public:
 		}
 	}
 
+	//PreCondition: NA 
+	//PostCondition: removes front key from heap container
 	void pop(void)
 	{
 		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty");
@@ -91,10 +101,12 @@ public:
 		}
 	}
 
+	//PreCondition: NA 
+	//PostCondition: displays contents of heap container 
 	void display(void)
 	{
 		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty");
-		std::cout << "\t\t";
+		std::cout << "\n\t\t";
 		for (int i = 0; i < size; i++)
 		{
 			std::cout << heapContainer[i] << " ";
@@ -102,17 +114,23 @@ public:
 		std::cout << std::endl;
 	}
 
-	int getSize() const
+	//PreCondition: NA 
+	//PostCondition: returns size of heap container
+	int getSize(void) const
 	{
 		return size;
 	}
 
-	bool isEmpty()
+	//PreCondition: NA 
+	//PostCondition: returns true if size is 0 false if size is > 0
+	bool isEmpty(void)
 	{
 		if (size == 0) return true;
 		return false;
 	}
 
+	//PreCondition: input is type T 
+	//PostCondition: returns true if data is found in heap false if data is not found in heap container
 	bool containes(const T& _data)
 	{
 		for (int i = 0; i < size; i++)
@@ -122,7 +140,9 @@ public:
 		return false;
 	}
 
-	T getFront()
+	//PreCondition: NA
+	//PostCondition: returns front data in heap container
+	T getFront(void)
 	{
 		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty");
 		return heapContainer[0];

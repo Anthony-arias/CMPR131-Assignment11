@@ -33,7 +33,41 @@ void displayOptionOneMenu(void)
     cout << "\t" + string(100, char(205)) << endl;
 }
 
+//PreCondition: NA
+//PostCondition: displays option one sub program A menu options
+void displayOptionOneSubAmenu(void)
+{
+    cout << "\n\tA> Min Heap" << endl;
+    cout << "\t" + string(100, char(205)) << endl;
+    cout << "\t\tA> size" << endl;
+    cout << "\t\tB> empty" << endl;
+    cout << "\t\tC> push" << endl;
+    cout << "\t\tD> front" << endl;
+    cout << "\t\tE> pop" << endl;
+    cout << "\t\tF> display" << endl;
 
+    cout << "\t" + string(100, char(196)) << endl;
+    cout << "\t\t0> return" << endl;
+    cout << "\t" + string(100, char(205)) << endl;
+}
+
+//PreCondition: NA
+//PostCondition: displays option one sub program B menu options
+void displayOptionOneSubBmenu(void)
+{
+    cout << "\n\tB> Max Heap" << endl;
+    cout << "\t" + string(100, char(205)) << endl;
+    cout << "\t\tA> size" << endl;
+    cout << "\t\tB> empty" << endl;
+    cout << "\t\tC> push" << endl;
+    cout << "\t\tD> front" << endl;
+    cout << "\t\tE> pop" << endl;
+    cout << "\t\tF> display" << endl;
+
+    cout << "\t" + string(100, char(196)) << endl;
+    cout << "\t\t0> return" << endl;
+    cout << "\t" + string(100, char(205)) << endl;
+}
 
 //PreCondition: NA
 //PostCondition: displays option two menu options
