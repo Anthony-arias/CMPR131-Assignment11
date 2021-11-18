@@ -124,6 +124,7 @@ void programOneSubA(void)
         case 'f': case 'F':
             try
             {
+                cout << "\n\t\t";
                 minHeap.display();
             }
             catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; }
@@ -182,6 +183,7 @@ void programOneSubB(void)
         case 'f': case 'F':
             try
             {
+                cout << "\n\t\t";
                 maxHeap.display();
             }
             catch (const invalid_argument& e) { cout << "\n\t\t" << e.what() << endl; }
@@ -202,14 +204,20 @@ void programTwo(void)
         clearScreen();
         displayOptionTwoMenu();
         int option = inputChar("\t\tOption: ");
+        vector<int>data1 = { 12,5,6,2 };
+        vector<int>data2 = { 12,9,6 };
+        MaxHeap<int>maxHeap1(data1);
+        MaxHeap<int>maxHeap2(data2);
+        MinHeap<int>minHeap1(data1);
+        MinHeap<int>minHeap2(data2);
 
         switch (option)
         {
         case '0': return;
-        case 'a': case 'A': /*function here*/ break;
-        case 'b': case 'B': /*function here*/ break;
-        case 'c': case 'C': /*function here*/ break;
-        case 'd': case 'D': /*function here*/ break;
+        case 'a': case 'A': mergedTwoMaxHeap(maxHeap1, maxHeap2); pause(""); break;
+        case 'b': case 'B': IntersectTwoMaxHeaps(maxHeap1, maxHeap2); pause(""); break;
+        case 'c': case 'C': mergedTwoMinHeap(minHeap1, minHeap2); pause("");  break;
+        case 'd': case 'D': IntersectTwoMinHeaps(minHeap1, minHeap2); pause(""); break;
         default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A','B','C', or 'D'" << endl;
             pause("\n\t\tPress enter to continue...");
         }

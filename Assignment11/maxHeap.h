@@ -5,12 +5,35 @@
 
 #include <iostream>
 #include <vector>
+using namespace std;
 
 template<class T>
 class MaxHeap
 {
 private:
 	int size;
+	void maxHeapify(vector<T>data, int i)
+	{
+		if (i >= data.size())
+			return;
+		int left = 2 * i + 1;
+		int right = 2 * i + 2;
+		int largest;
+
+		if (left < data.size() && data[left] > data[i])
+			largest = left;
+		else
+			largest = i;
+
+		if (right < data.size() && data[right] > data[largest])
+			largest = right;
+
+		if (largest != i) 
+		{
+			swap(data[largest], data[i]);
+			maxHeapify(data, largest);
+		}
+	}
 public:
 	vector<T> heapContainer;
 
@@ -23,6 +46,13 @@ public:
 	{
 		heapContainer.push_back(_data);
 		size = 1;
+	}
+
+	MaxHeap(vector<T>data)
+	{
+		for (int i = 0; i < data.size(); i++)
+			push(data[i]);
+		size = data.size();
 	}
 
 	~MaxHeap()
@@ -106,12 +136,11 @@ public:
 	void display(void)
 	{
 		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty");
-		std::cout << "\n\t\t";
 		for (int i = 0; i < size; i++)
 		{
-			std::cout << heapContainer[i] << " ";
+			cout << heapContainer[i] << " ";
 		}
-		std::cout << std::endl;
+		cout << endl;
 	}
 
 	//PreCondition: NA 

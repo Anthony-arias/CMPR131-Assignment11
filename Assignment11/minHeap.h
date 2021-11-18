@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <vector>
+using namespace std;
 
 template<class T>
 class MinHeap
@@ -23,6 +24,13 @@ public:
 	{
 		heapContainer.push_back(_data);
 		size = 1;
+	}
+
+	MinHeap(vector<T>data)
+	{
+		for (int i = 0; i < data.size(); i++)
+			push(data[i]);
+		size = data.size();
 	}
 
 	~MinHeap()
@@ -106,12 +114,11 @@ public:
 	void display(void)
 	{
 		if (isEmpty()) throw invalid_argument("ERROR: the heap is empty");
-		std::cout << "\n\t\t";
 		for (int i = 0; i < size; i++)
 		{
-			std::cout << heapContainer[i] << " ";
+			cout << heapContainer[i] << " ";
 		}
-		std::cout << std::endl;
+		cout << endl;
 	}
 
 	//PreCondition: NA 
