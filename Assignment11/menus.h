@@ -26,8 +26,7 @@ void displayOptionOneMenu(void)
     cout << "\n\t1> Heap using vector" << endl;
     cout << "\t" + string(100, char(205)) << endl;
     cout << "\t\tA> Min heap" << endl;
-    cout << "\t\tB> Max heap" << endl;
-   
+    cout << "\t\tB> Max heap" << endl;   
     cout << "\t" + string(100, char(196)) << endl;
     cout << "\t\t0> return" << endl;
     cout << "\t" + string(100, char(205)) << endl;
@@ -45,7 +44,6 @@ void displayOptionOneSubAmenu(void)
     cout << "\t\tD> front" << endl;
     cout << "\t\tE> pop" << endl;
     cout << "\t\tF> display" << endl;
-
     cout << "\t" + string(100, char(196)) << endl;
     cout << "\t\t0> return" << endl;
     cout << "\t" + string(100, char(205)) << endl;
@@ -63,7 +61,6 @@ void displayOptionOneSubBmenu(void)
     cout << "\t\tD> front" << endl;
     cout << "\t\tE> pop" << endl;
     cout << "\t\tF> display" << endl;
-
     cout << "\t" + string(100, char(196)) << endl;
     cout << "\t\t0> return" << endl;
     cout << "\t" + string(100, char(205)) << endl;

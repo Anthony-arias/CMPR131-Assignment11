@@ -15,8 +15,6 @@
 #include "minHeap.h"
 #include "maxHeap.h"
 
-
-
 void mainMenu(void);
 void programOne(void);
 void programTwo(void);

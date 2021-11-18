@@ -24,7 +24,6 @@ void mergedTwoMaxHeap(MaxHeap<int>heap1, MaxHeap<int>heap2)
 	heap1.display();
 }
 
-
 //PreCondition: input two maxHeap
 //PostCondition: intersect two maxHeap
 void IntersectTwoMaxHeaps(MaxHeap<int>heap1, MaxHeap<int>heap2)
@@ -56,7 +55,6 @@ void mergedTwoMinHeap(MinHeap<int>heap1, MinHeap<int>heap2)
 	cout << "\n\t\tMerged min heap: ";
 	heap1.display();
 }
-
 
 //PreCondition: input two minHeap
 //PostCondition: intersect two minHeap
