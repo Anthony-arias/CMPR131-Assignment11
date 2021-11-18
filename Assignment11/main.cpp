@@ -7,7 +7,6 @@
 #include <iostream>
 #include <ctime>
 #include <string>
-#include <ctime>
 #include "optionOne.h"
 #include "optionTwo.h"
 #include "input.h"
