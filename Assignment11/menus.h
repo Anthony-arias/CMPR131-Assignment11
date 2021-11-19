@@ -32,8 +32,6 @@ void displayOptionOneMenu(void)
     cout << "\t" + string(100, char(205)) << endl;
 }
 
-
-
 //PreCondition: NA
 //PostCondition: displays option two menu options
 void displayOptionTwoMenu(void)
