@@ -26,43 +26,9 @@ void displayOptionOneMenu(void)
     cout << "\n\t1> Heap using vector" << endl;
     cout << "\t" + string(100, char(205)) << endl;
     cout << "\t\tA> Min heap" << endl;
-    cout << "\t\tB> Max heap" << endl;
+    cout << "\t\tB> Max heap" << endl;   
     cout << "\t" + string(100, char(196)) << endl;
-    cout << "\t\t0> Return" << endl;
-    cout << "\t" + string(100, char(205)) << endl;
-}
-
-//PreCondition: NA
-//PostCondition: displays option one sub program A menu options
-void displayOptionOneSubAmenu(void)
-{
-    cout << "\n\tA> Min Heap" << endl;
-    cout << "\t" + string(100, char(205)) << endl;
-    cout << "\t\t1. Size" << endl;
-    cout << "\t\t2. Empty" << endl;
-    cout << "\t\t3. Push" << endl;
-    cout << "\t\t4. Front" << endl;
-    cout << "\t\t5. Pop" << endl;
-    cout << "\t\t6. Display" << endl;
-    cout << "\t" + string(100, char(196)) << endl;
-    cout << "\t\t0. Return" << endl;
-    cout << "\t" + string(100, char(205)) << endl;
-}
-
-//PreCondition: NA
-//PostCondition: displays option one sub program B menu options
-void displayOptionOneSubBmenu(void)
-{
-    cout << "\n\tB> Max Heap" << endl;
-    cout << "\t" + string(100, char(205)) << endl;
-    cout << "\t\t1. Size" << endl;
-    cout << "\t\t2. Empty" << endl;
-    cout << "\t\t3. Push" << endl;
-    cout << "\t\t4. Front" << endl;
-    cout << "\t\t5. Pop" << endl;
-    cout << "\t\t6. Display" << endl;
-    cout << "\t" + string(100, char(196)) << endl;
-    cout << "\t\t0. Return" << endl;
+    cout << "\t\t0> return" << endl;
     cout << "\t" + string(100, char(205)) << endl;
 }
 
@@ -77,7 +43,7 @@ void displayOptionTwoMenu(void)
     cout << "\t\tC> Union two mmin Heaps" << endl;
     cout << "\t\tD> Intersect two min Heaps" << endl;
     cout << "\t" + string(100, char(196)) << endl;
-    cout << "\t\t0> Return" << endl;
+    cout << "\t\t0> return" << endl;
     cout << "\t" + string(100, char(205)) << endl;
 }
 
@@ -87,7 +53,7 @@ void displayOptionThreeMenu(void)
 {
     cout << "\n\t3> Heap in C++ STL" << endl;
     cout << "\t" + string(100, char(205)) << endl;
-    cout << "\t\tA> Create a dynamic array" << endl;
+    cout << "\t\tA> create a dynamic array" << endl;
     cout << "\t\tB> push_back() an element" << endl;
     cout << "\t\tC> make_heap()" << endl;
     cout << "\t\tD> front()" << endl;
@@ -96,8 +62,8 @@ void displayOptionThreeMenu(void)
     cout << "\t\tG> sort_heap()" << endl;
     cout << "\t\tH> is_heap()" << endl;
     cout << "\t\tI> is_heap_until()" << endl;
-    cout << "\t\tJ> Display" << endl;
+    cout << "\t\tJ> display" << endl;
     cout << "\t" + string(100, char(196)) << endl;
-    cout << "\t\t0> Return" << endl;
+    cout << "\t\t0> return" << endl;
     cout << "\t" + string(100, char(205)) << endl;
 }

@@ -1,5 +1,4 @@
 // main.cpp
-
 // Team: Anthony, An, Van, Vincent, Nhan
 // Chapter 11: 
 // 11/18/2021
@@ -12,13 +11,13 @@
 #include "optionThree.h"
 #include "input.h"
 #include "menus.h"
+#include "minHeap.h"
+#include "maxHeap.h"
 
 void mainMenu(void);
 void programOne(void);
 void programTwo(void);
 void programThree(void);
-void programOneSubA(void);
-void programOneSubB(void);
 
 using namespace std;
 
@@ -35,16 +34,15 @@ void mainMenu(void)
     do
     {
         clearScreen();
-
         displayMainMenu();
 
         int userInput = inputInteger("\t\tOption: ", 0, 3);
         switch (userInput)
         {
-        case 0: clearScreen(); return;
-        case 1: clearScreen(); programOne(); break;
-        case 2: clearScreen(); programTwo(); break;
-        case 3: clearScreen(); programThree(); break;
+        case 0: return;
+        case 1: programOne(); break;
+        case 2: programTwo(); break;
+        case 3: programThree(); break;
         default: cout << "\t\tERROR-3A: Invalid input. Must be from 0..3." << endl;
         }
 
@@ -55,83 +53,26 @@ void mainMenu(void)
 //PostCondition: runs program one
 void programOne(void)
 {
-    cout << "\n\tVectors are sequence containers representing arrays that can change in size.\n";
     do
     {
         clearScreen();
-
-        displayOptionOneMenu();
-
+        displayOptionOneMenu();      
+        
         int option = inputChar("\t\tOption: ");
 
         switch (option)
         {
         case '0': return;
-        case 'a': case 'A': programOneSubA(); break;
-        case 'b': case 'B': programOneSubB(); break;
+        case 'a': case 'A': min_heap(); break;
+        case 'b': case 'B': max_heap(); break;
         default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'." << endl;
+            pause("\n\t\tPress enter to continue...");   
         }
-        cout << endl;
-        pause("\n\t\tPress enter to continue...");
     } while (true);
 }
 
 //PreCondition: NA
-//PostCondition: runs min heap program
-void programOneSubA(void)
-{
-    MinHeap<int> minHeap;
-    do
-    {
-        clearScreen();
-        displayOptionOneSubAmenu();
-        int option = inputInteger("\t\tOption: ", 0, 6);
-
-        switch (option)
-        {
-        case 0: return;
-        case 1: getSize(minHeap); break;
-        case 2: isEmpty(minHeap); break;
-        case 3: push(minHeap); break;
-        case 4: getFront(minHeap); break;
-        case 5: pop(minHeap); break;
-        case 6: display(minHeap); break;
-        default: cout << "\t\tERROR-3A: Invalid input. Must be from 0..6." << endl;
-        }
-        cout << endl;
-        pause("\n\t\tPress enter to continue...");
-    } while (true);
-}
-
-//PreCondition: NA
-//PostCondition: runs max heap program 
-void programOneSubB(void)
-{
-    MaxHeap<int> maxHeap;
-    do
-    {
-        clearScreen();
-        displayOptionOneSubBmenu();
-        int option = inputInteger("\t\tOption: ", 0, 6);
-
-        switch (option)
-        {
-        case 0: return;
-        case 1: getSize(maxHeap); break;
-        case 2: isEmpty(maxHeap); break;
-        case 3: push(maxHeap); break;
-        case 4: getFront(maxHeap); break;
-        case 5: pop(maxHeap); break;
-        case 6: display(maxHeap); break;
-        default: cout << "\t\tERROR-3A: Invalid input. Must be from 0..6." << endl;
-        }
-        cout << endl;
-        pause("\n\t\tPress enter to continue...");
-    } while (true);
-}
-
-//PreCondition: NA
-//PostCondition: 
+//PostCondition: runs program two
 void programTwo(void)
 {
     do
@@ -184,7 +125,8 @@ void programThree(void)
         case 'E': pushHeap(data); break;
         case 'F': popHeap(data); break;
         case 'H': isHeap(data); break;
-        case 'I': isHeapUntil(data); break;
+        case 'G': sortHeap(data); break;
+        case 'I': isHeapUntil(data); break;          
         case 'J': display(data); break;
         default:
             cout << "\t\tERROR-1A: Invalid input. Must be '0','A','B','C','D','E','F','G','H','I' or 'J'." << endl;
