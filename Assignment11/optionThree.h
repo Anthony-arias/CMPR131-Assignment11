@@ -106,6 +106,25 @@ void popHeap(vector<int>& data)
 }
 
 // Precondition: NA
+// Postcondition: sort the heap
+void sortHeap(vector<int>& data)
+{
+    if (!is_heap(data.begin(), data.end()))
+    {
+        cout << "\n\t\tError: Vector is not a heap.";
+    }
+    else if (data.size() > 0)
+    {
+        sort_heap(data.begin(), data.end());
+        cout << "\n\t\tHeap has been sorted.";
+    }
+    else
+    {
+        cout << "\n\t\tError: Vector is empty.";
+    }
+}
+
+// Precondition: NA
 // Postcondition: check if the vector is a heap or not
 void isHeap(vector<int> data)
 {
