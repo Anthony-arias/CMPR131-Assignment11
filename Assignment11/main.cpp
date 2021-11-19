@@ -54,8 +54,6 @@ void mainMenu(void)
 //PostCondition: runs program one
 void programOne(void)
 {
-    MinHeap<int> minHeap;
-    MaxHeap<int> maxHeap;
     do
     {
         clearScreen();
@@ -66,8 +64,8 @@ void programOne(void)
         switch (option)
         {
         case '0': return;
-        case 'a': case 'A': min_heap(minHeap); break;
-        case 'b': case 'B': max_heap(maxHeap); break;
+        case 'a': case 'A': min_heap(); break;
+        case 'b': case 'B': max_heap(); break;
         default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'." << endl;
             pause("\n\t\tPress enter to continue...");              
         }

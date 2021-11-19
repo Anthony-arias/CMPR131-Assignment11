@@ -15,8 +15,9 @@ void displayOptionOneSubBmenu();
 
 //PreCondition: NA
 //PostCondition: runs min heap program
-void min_heap(MinHeap<int> minHeap)
+void min_heap()
 {
+    MinHeap<int> minHeap;
     do
     {
         clearScreen();
@@ -89,8 +90,9 @@ void min_heap(MinHeap<int> minHeap)
 
 //PreCondition: NA
 //PostCondition: runs max heap program 
-void max_heap(MaxHeap<int> maxHeap)
+void max_heap()
 {
+    MaxHeap<int> maxHeap;
     do
     {
         clearScreen();
