@@ -51,7 +51,7 @@ void makeHeap(vector<int>& data)
 }
 
 // Precondition: NA
-// Postcondition: display the first element of the vector
+// Postcondition: display the first element of the heap
 void getFront(vector<int>data)
 {
     if (data.size() > 0)
