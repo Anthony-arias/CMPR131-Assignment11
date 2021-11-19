@@ -51,15 +51,12 @@ void makeHeap(vector<int>& data)
 }
 
 // Precondition: NA
-// Postcondition: display the first element of the heap
+// Postcondition: display the first element of the vector
 void getFront(vector<int>data)
 {
     if (data.size() > 0)
     {
-        if (is_heap(data.begin(), data.end()))
-            cout << "\n\t\tThe first element of the vector is: " << data.front() << endl;
-        else
-            cout << "\n\t\tError: Vector is not a heap." << endl;
+        cout << "\n\t\tThe first element of the vector is: " << data.front() << endl;
     }
     else
         cout << "\n\t\tError: Vector is empty." << endl;
