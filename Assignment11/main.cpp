@@ -1,5 +1,4 @@
 // main.cpp
-
 // Team: Anthony, An, Van, Vincent, Nhan
 // Chapter 11: 
 // 11/18/2021
@@ -40,10 +39,10 @@ void mainMenu(void)
         int userInput = inputInteger("\t\tOption: ", 0, 3);
         switch (userInput)
         {
-        case 0: return;
-        case 1: programOne(); break;
-        case 2: programTwo(); break;
-        case 3: programThree(); break;
+        case 0: clearScreen(); return;
+        case 1: clearScreen(); programOne(); break;
+        case 2: clearScreen(); programTwo(); break;
+        case 3: clearScreen(); programThree(); break;
         default: cout << "\t\tERROR-3A: Invalid input. Must be from 0..3." << endl;
         }
 
@@ -67,7 +66,8 @@ void programOne(void)
         case 'a': case 'A': min_heap(); break;
         case 'b': case 'B': max_heap(); break;
         default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'." << endl;
-            pause("\n\t\tPress enter to continue...");              
+            pause("\n\t\tPress enter to continue...");   
+            //system("pause");
         }
     } while (true);
 }
@@ -126,6 +126,7 @@ void programThree(void)
         case 'E': pushHeap(data); break;
         case 'F': popHeap(data); break;
         case 'H': isHeap(data); break;
+        case 'G': sortHeap(data); break;
         case 'I': isHeapUntil(data); break;          
         case 'J': display(data); break;
         default:

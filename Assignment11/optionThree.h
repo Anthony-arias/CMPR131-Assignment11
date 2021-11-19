@@ -1,4 +1,5 @@
 // optionThree.h
+// Team: Anthony, An, Van, Vincent, Nhan
 
 #ifndef OPTION_THREE_LOCK
 #define OPTION_THREE_LOCK
@@ -8,6 +9,8 @@
 #include <algorithm>
 #include "input.h"
 
+// Precondition: NA
+// Postcondition: Randomly generate number based on the input's size
 void initArray(vector<int>& data)
 {
     srand(time(0));
@@ -16,23 +19,26 @@ void initArray(vector<int>& data)
         data.clear();
     }
 
-    int size = inputInteger("\n\t\tEnter the size of the dynamic array: ", 1);
+    int size = inputInteger("\n\t\tEnter the size of the vector: ", 1);
     for (int i = 0; i < size; i++)
     {
         data.push_back((rand() % 100) + 1);
     }
-    cout << "\n\t\tThe array is intialized with " << size << " random values." << endl;
+    cout << "\n\t\tThe vector is intialized with " << size << " random values." << endl;
 
 }
 
+// Precondition: NA
+// Postcondition: push back value into vector
 void pushValue(vector<int>& data)
 {
 	int newElement = inputInteger("\n\t\tEnter an element: ");
 	data.push_back(newElement);
-    cout << "\n\t\t" << newElement << " has been push back into a dynamic array." << endl;
+    cout << "\n\t\t" << newElement << " has been push back into a vector." << endl;
 }
 
-
+// Precondition: NA
+// Postcondition: convert the vector into a heap
 void makeHeap(vector<int>& data)
 {
     if (data.size() > 0)
@@ -44,7 +50,8 @@ void makeHeap(vector<int>& data)
         cout << "\n\t\tError: Vector is empty." << endl;
 }
 
-
+// Precondition: NA
+// Postcondition: display the first element of the vector
 void getFront(vector<int>data)
 {
     if (data.size() > 0)
@@ -55,6 +62,8 @@ void getFront(vector<int>data)
         cout << "\n\t\tError: Vector is empty." << endl;
 }
 
+// Precondition: NA
+// Postcondition: push value into a heap
 void pushHeap(vector<int>&data)
 {
     if (data.size() > 0)
@@ -77,6 +86,8 @@ void pushHeap(vector<int>&data)
     }
 }
 
+// Precondition: NA
+// Postcondition: pop value from the heap
 void popHeap(vector<int>& data)
 {
     if (data.size() > 0)
@@ -94,7 +105,27 @@ void popHeap(vector<int>& data)
         cout << "\n\t\tError: Vector is empty." << endl;
 }
 
+// Precondition: NA
+// Postcondition: sort the heap
+void sortHeap(vector<int>& data)
+{
+    if (!is_heap(data.begin(), data.end()))
+    {
+        cout << "\n\t\tError: Vector is not a heap.";
+    }
+    else if (data.size() > 0)
+    {
+        sort_heap(data.begin(), data.end());
+        cout << "\n\t\tHeap has been sorted.";
+    }
+    else
+    {
+        cout << "\n\t\tError: Vector is empty.";
+    }
+}
 
+// Precondition: NA
+// Postcondition: check if the vector is a heap or not
 void isHeap(vector<int> data)
 {
     if (data.size() > 0)
@@ -108,6 +139,8 @@ void isHeap(vector<int> data)
         cout << "\n\t\tError: Vector is empty." << endl;
 }
 
+// Precondition: NA
+// Postcondition: display the heap elements in container
 void isHeapUntil(vector<int> data)
 {
 	if (data.size() > 0)
@@ -123,11 +156,13 @@ void isHeapUntil(vector<int> data)
 
 }
 
-
+// Precondition: NA
+// Postcondition: display the value in the vector
 void display(vector<int> data)
 {
     if (data.size() > 0)
     {
+        // If the vector is not converted into a heap, contents are still displayed with a notice
         if (!is_heap(data.begin(), data.end()))
         {
             cout << "\n\t\tNote: The vector has not been converted to a heap yet." << endl;
@@ -137,6 +172,8 @@ void display(vector<int> data)
                 cout << data[i] << " ";
             }
         }
+
+        // If the vector is a heap, display the content
         else
         {
             cout << "\n\t\t";
