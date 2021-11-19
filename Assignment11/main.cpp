@@ -131,7 +131,7 @@ void programOneSubB(void)
 }
 
 //PreCondition: NA
-//PostCondition: Union and intersect two heap
+//PostCondition: 
 void programTwo(void)
 {
     do
@@ -149,10 +149,10 @@ void programTwo(void)
         switch (option)
         {
         case '0': return;
-        case 'A': mergedTwoMaxHeap(maxHeap1, maxHeap2); break;
-        case 'B': IntersectTwoMaxHeaps(maxHeap1, maxHeap2); break;
-        case 'C': mergedTwoMinHeap(minHeap1, minHeap2); break;
-        case 'D': IntersectTwoMinHeaps(minHeap1, minHeap2); break;
+        case 'a': case 'A': mergedTwoMaxHeap(maxHeap1, maxHeap2); break;
+        case 'b': case 'B': IntersectTwoMaxHeaps(maxHeap1, maxHeap2); break;
+        case 'c': case 'C': mergedTwoMinHeap(minHeap1, minHeap2); break;
+        case 'd': case 'D': IntersectTwoMinHeaps(minHeap1, minHeap2); break;
         default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A','B','C', or 'D'." << endl;
         }
         cout << endl;
@@ -183,7 +183,6 @@ void programThree(void)
         case 'D': getFront(data); break;
         case 'E': pushHeap(data); break;
         case 'F': popHeap(data); break;
-        case 'G': sortHeap(data); break;
         case 'H': isHeap(data); break;
         case 'I': isHeapUntil(data); break;
         case 'J': display(data); break;
