@@ -150,10 +150,9 @@ void isHeapUntil(vector<int> data)
 	{
 		auto it = is_heap_until(data.begin(), data.end());
 		vector<int>::iterator it1;
-        cout << "\n\t\tThe heap elements in container are: ";
+        cout << "\n\t\tThe heap elements in container are: " << endl;
 		for (it1 = data.begin(); it1 != it; it1++)
 			cout << *it1 << " ";
-        cout << "\n";
 	}
 	else
         cout << "\n\t\tError: Vector is empty." << endl;
@@ -162,14 +161,29 @@ void isHeapUntil(vector<int> data)
 
 // Precondition: NA
 // Postcondition: display the value in the vector
-void display(vector<int>& data)
+void display(vector<int> data)
 {
     if (data.size() > 0)
     {
-        cout << "\n\t\t";
-        for (int i = 0; i < data.size(); i++)
+        // If the vector is not converted into a heap, contents are still displayed with a notice
+        if (!is_heap(data.begin(), data.end()))
         {
-            cout << data[i] << " ";
+            cout << "\n\t\tNote: The vector has not been converted to a heap yet." << endl;
+            cout << "\n\t\t";
+            for (int i = 0; i < data.size(); i++)
+            {
+                cout << data[i] << " ";
+            }
+        }
+
+        // If the vector is a heap, display the content
+        else
+        {
+            cout << "\n\t\t";
+            for (int i = 0; i < data.size(); i++)
+            {
+                cout << data[i] << " ";
+            }
         }
     }
     else
