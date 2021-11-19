@@ -56,7 +56,10 @@ void getFront(vector<int>data)
 {
     if (data.size() > 0)
     {
-        cout << "\n\t\tThe first element of the vector is: " << data.front() << endl;
+        if (is_heap(data.begin(), data.end()))
+            cout << "\n\t\tThe first element of the vector is: " << data.front() << endl;
+        else
+            cout << "\n\t\tError: Vector is not a heap." << endl;
     }
     else
         cout << "\n\t\tError: Vector is empty." << endl;
