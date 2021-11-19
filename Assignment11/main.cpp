@@ -166,7 +166,6 @@ void programThree(void)
 {
 
     vector<int> data;
-    int newSize, newElement;
     do
     {
         clearScreen();
