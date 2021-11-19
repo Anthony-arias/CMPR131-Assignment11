@@ -39,10 +39,10 @@ void mainMenu(void)
         int userInput = inputInteger("\t\tOption: ", 0, 3);
         switch (userInput)
         {
-        case 0: clearScreen(); return;
-        case 1: clearScreen(); programOne(); break;
-        case 2: clearScreen(); programTwo(); break;
-        case 3: clearScreen(); programThree(); break;
+        case 0: return;
+        case 1: programOne(); break;
+        case 2: programTwo(); break;
+        case 3: programThree(); break;
         default: cout << "\t\tERROR-3A: Invalid input. Must be from 0..3." << endl;
         }
 
@@ -67,7 +67,6 @@ void programOne(void)
         case 'b': case 'B': max_heap(); break;
         default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'." << endl;
             pause("\n\t\tPress enter to continue...");   
-            //system("pause");
         }
     } while (true);
 }
