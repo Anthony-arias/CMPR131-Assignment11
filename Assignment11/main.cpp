@@ -3,6 +3,8 @@
 // Chapter 11: 
 // 11/18/2021
 
+// Anthony, An, Van, and Nhan created the contents in this file 
+
 #include <iostream>
 #include <ctime>
 #include <string>
