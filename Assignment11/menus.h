@@ -1,5 +1,7 @@
 // menus.h
 
+// Implemented by: Anthony, An, Van, Vincent, Nhan
+
 #include <iostream>
 #include <string>
 

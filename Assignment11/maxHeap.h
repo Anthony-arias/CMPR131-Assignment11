@@ -1,7 +1,6 @@
 // maxHeap.h
 
-// Anthony created the contents in this file
-// Van created MaxHeap(vector<T>data) constructor
+// Implemented by: Anthony, An, Van, Vincent, Nhan
 
 #ifndef MAXHEAP_LOCK
 #define MAXHEAP_LOCK

@@ -1,8 +1,6 @@
 // optionThree.h
 // Team: Anthony, An, Van, Vincent, Nhan
 
-// Implemented by: Anthony, An, Van, Vincent, Nhan
-
 #ifndef OPTION_THREE_LOCK
 #define OPTION_THREE_LOCK
 #include <iostream>
@@ -56,12 +54,16 @@ void makeHeap(vector<int>& data)
 // Postcondition: display the first element of the vector
 void getFront(vector<int>data)
 {
-    if (data.size() > 0)
+    if (data.size() == 0)
     {
-        cout << "\n\t\tThe first element of the vector is: " << data.front() << endl;
-    }
-    else
         cout << "\n\t\tError: Vector is empty." << endl;
+        return;
+    }
+    if (is_heap(data.begin(), data.end()))
+    {
+        cout << "\n\t\tThe maximum element of heap: " << data.front() << endl;
+    }
+    else cout << "\n\t\tError: Vector is not a heap.";
 }
 
 // Precondition: NA
