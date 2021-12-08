@@ -26,7 +26,7 @@ void initArray(vector<int>& data)
     {
         data.push_back((rand() % 100) + 1);
     }
-    cout << "\n\t\tThe vector is intialized with " << size << " random values." << endl;
+    cout << "\n\t\tThe vector is initialized with " << size << " random values." << endl;
 
 }
 
