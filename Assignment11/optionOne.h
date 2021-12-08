@@ -85,7 +85,7 @@ void min_heap()
             }
             pause("");
             break;
-        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'." << endl;
+        default: cout << "\t\tERROR-1A: Invalid input. Must be '0','A','B','C','D','E' or 'F'." << endl;
             pause("");
         }
     } while (true);
@@ -163,7 +163,7 @@ void max_heap()
             pause("");
             break;
         default:
-            cout << "\t\tERROR-1A: Invalid input. Must be '0','A', or 'B'." << endl;
+            cout << "\t\tERROR-1A: Invalid input. Must be '0','A','B','C','D','E' or 'F'." << endl;
             pause("");
         }
     } while (true);
